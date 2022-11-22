@@ -12,8 +12,6 @@ private var students: [Student] = []
 class Category {
     func type(_ input: InputType) {
         switch input {
-        case .category:
-            return
         case .addStudent:
             return addStudent()
         case .deleteStudent:
@@ -24,6 +22,8 @@ class Category {
             return deleteGrade()
         case .average:
             return average()
+        case .exit:
+            return exit()
         }
     }
     
@@ -34,10 +34,10 @@ class Category {
         }
         if containStudent(name) {
             print("\(name)은 이미 존재하는 학생입니다. 추가하지 않습니다.")
-            return
+        } else {
+            students.append(Student(name: name))
+            print("\(name) 학생을 추가했습니다.")
         }
-        students.append(Student(name: name))
-        print("\(name) 학생을 추가했습니다.")
     }
     
     private func deleteStudent() {
@@ -45,13 +45,11 @@ class Category {
         guard let name = input.input(.deleteStudent) as? String else {
             return
         }
-        if !containStudent(name) {
-            print("\(name) 학생을 찾지 못했습니다.")
-            return
-        }
         if let idx = students.firstIndex(where: {$0.name == name}) {
             students.remove(at: idx)
             print("\(name) 학생을 삭제했습니다.")
+        } else {
+            print("\(name) 학생을 찾지 못했습니다.")
         }
     }
     
@@ -155,5 +153,9 @@ class Category {
         } else {
             return false
         }
+    }
+    
+    private func exit() {
+        print("프로그램을 종료합니다...")
     }
 }

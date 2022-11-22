@@ -8,12 +8,12 @@
 import Foundation
 
 enum InputType: Int, CaseIterable {
-    case category
     case addStudent
     case deleteStudent
     case addGrade
     case deleteGrade
     case average
+    case exit
     
     var kind: String {
         String(describing: self)
