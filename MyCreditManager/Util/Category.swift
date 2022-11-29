@@ -12,6 +12,8 @@ private var students: [Student] = []
 class Category {
     func type(_ input: InputType) {
         switch input {
+        case .menu:
+            return
         case .addStudent:
             return addStudent()
         case .deleteStudent:

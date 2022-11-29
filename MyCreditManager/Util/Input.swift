@@ -10,6 +10,8 @@ import Foundation
 class Input {
     func input(_ input: InputType) -> Any? {
         switch input {
+        case .menu:
+            return inputMenu()
         case .addStudent:
             return inputSigle()
         case .deleteStudent:
@@ -23,6 +25,10 @@ class Input {
         case .exit:
             return Void()
         }
+    }
+    
+    private func inputMenu() -> String? {
+        return readLine()
     }
     
     private func inputSigle() -> String? {

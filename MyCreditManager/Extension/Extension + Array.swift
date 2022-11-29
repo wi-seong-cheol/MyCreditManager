@@ -8,6 +8,7 @@
 import Foundation
 
 extension Array {
+    
     mutating func index(where condition: (Element) -> Bool) -> Int? {
         guard let index = firstIndex(where: condition) else {
             return nil

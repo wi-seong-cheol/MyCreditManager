@@ -8,6 +8,7 @@
 import Foundation
 
 enum InputType: Int, CaseIterable {
+    case menu
     case addStudent
     case deleteStudent
     case addGrade
