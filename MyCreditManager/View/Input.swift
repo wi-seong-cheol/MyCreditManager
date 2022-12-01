@@ -35,7 +35,7 @@ class Input {
         guard let data = readLine()?.components(separatedBy: " "),
               data.count == 1,
               data.first != "" else {
-            print("입력이 잘못되었습니다. 다시 확인해주세요.")
+            Output.Print.inputError()
             return nil
         }
         return data.first
@@ -45,7 +45,7 @@ class Input {
         guard let data = readLine()?.components(separatedBy: " "),
               data.count == size,
               data[size - 1] != "" else {
-            print("입력이 잘못되었습니다. 다시 확인해주세요.")
+            Output.Print.inputError()
             return nil
         }
         return data
