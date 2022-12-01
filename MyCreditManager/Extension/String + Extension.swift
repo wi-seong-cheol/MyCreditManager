@@ -8,7 +8,6 @@
 import Foundation
 
 extension Decimal {
-    
     var averageString: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumFractionDigits = 2
